@@ -279,7 +279,7 @@ module.exports = merge(commonConfig, {
           handler: 'networkFirst',
           options: {
             cache: {
-              maxEntries: 300,
+              maxEntries: 1000,
               name: 'unpkg-dep-pkg-cache',
               maxAgeSeconds: 60 * 5, // 5 minutes
             },
@@ -290,7 +290,7 @@ module.exports = merge(commonConfig, {
           handler: 'cacheFirst',
           options: {
             cache: {
-              maxEntries: 300,
+              maxEntries: 1000,
               name: 'unpkg-dep-cache',
               maxAgeSeconds: 60 * 60 * 24 * 7,
             },
@@ -312,7 +312,7 @@ module.exports = merge(commonConfig, {
           handler: 'cacheFirst',
           options: {
             cache: {
-              maxEntries: 300,
+              maxEntries: 1000,
               name: 'jsdelivr-dep-cache',
               maxAgeSeconds: 60 * 60 * 24 * 7,
             },
