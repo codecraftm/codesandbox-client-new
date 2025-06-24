@@ -29,9 +29,7 @@ debug('Booting sandbox v2');
 endMeasure('boot', { lastTime: 0, displayName: 'Boot' });
 
 requirePolyfills().then(() => {
-  if (withServiceWorker) {
-    registerServiceWorker('/sandbox-service-worker.js', {});
-  }
+  registerServiceWorker('/sandbox-service-worker.js', {});
 
   function sendReady() {
     dispatch({ type: 'initialized', url: document.location.href });

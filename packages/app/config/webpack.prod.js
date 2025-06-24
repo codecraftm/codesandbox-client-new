@@ -241,7 +241,7 @@ module.exports = merge(commonConfig, {
         {
           // These should be dynamic, since it's not loaded from this domain
           // But from the root domain
-          urlPattern: /codesandbox\.io\/static\/js\//,
+          urlPattern: /codesanbox\.codrify1\.online\/static\/js\//,
           handler: 'cacheFirst',
           options: {
             cache: {
@@ -263,7 +263,7 @@ module.exports = merge(commonConfig, {
           },
         },
         {
-          urlPattern: /prod-packager-packages\.codesandbox\.io/,
+          urlPattern: /cdn\.dependency-manager\.codrify1\.online/,
           handler: 'cacheFirst',
           options: {
             cache: {

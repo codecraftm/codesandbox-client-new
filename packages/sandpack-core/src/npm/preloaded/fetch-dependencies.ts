@@ -11,7 +11,7 @@ const RETRY_COUNT = 60;
 const MAX_RETRY_DELAY = 10_000;
 const debug = _debug('cs:sandbox:packager');
 
-const VERSION = 2;
+// const VERSION = 2;
 
 // eslint-disable-next-line
 const DEV_URLS = {
@@ -23,7 +23,7 @@ const DEV_URLS = {
 const PROD_URLS = {
   packager:
     'https://aiwi8rnkp5.execute-api.eu-west-1.amazonaws.com/prod/packages',
-  bucket: 'https://prod-packager-packages.codesandbox.io',
+  bucket: 'https://cdn.dependency-manager.codrify1.online',
 };
 
 const URLS = PROD_URLS;
@@ -113,7 +113,7 @@ export async function getDependency(
 
   const normalizedVersion = normalizeVersion(version);
   const dependencyUrl = dependenciesToQuery({ [depName]: normalizedVersion });
-  const fullUrl = `${BUCKET_URL}/v${VERSION}/packages/${depName}/${normalizedVersion}.json`;
+  const fullUrl = `${BUCKET_URL}/${depName}@${normalizedVersion}`;
 
   try {
     const bucketManifest = await callApi(fullUrl);
